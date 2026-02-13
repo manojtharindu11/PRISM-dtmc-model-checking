@@ -1,0 +1,17 @@
+dtmc
+
+const double x;
+
+module FirstEx
+
+s:[0..3] init 0;
+
+[] (s=0) -> x:(s'=1) + 1-x:(s'=2);
+[] (s=1) -> (s'=3);
+[] (s=2) -> (s'=1);
+[] (s=3) -> (s'=3);
+
+endmodule
+
+label "p" = s=0;
+label "q" = s=3;
