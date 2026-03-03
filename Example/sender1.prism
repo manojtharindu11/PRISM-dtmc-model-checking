@@ -1,0 +1,17 @@
+dtmc
+
+module sender1;
+
+s:[0..4] init 0;
+
+[] (s=0) -> 0.2:(s'=1) + 0.8:(s'=3);
+[] (s=1) -> 0.2:(s'=2) + 0.8:(s'=3);
+[] (s=2) -> 0.2:(s'=4) + 0.8:(s'=3);
+[] (s=3) -> (s'=3);
+[] (s=4) -> (s'=4);
+
+label "Start" = s=0;
+label "Success" = s=3;
+label "Fail1" = s=1;
+label "Fail2" = s=2;
+label "Fail3" = s=4;
