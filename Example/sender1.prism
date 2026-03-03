@@ -10,6 +10,8 @@ s:[0..4] init 0;
 [] (s=3) -> (s'=3);
 [] (s=4) -> (s'=4);
 
+endmodule
+
 label "Start" = s=0;
 label "Success" = s=3;
 label "Fail1" = s=1;
